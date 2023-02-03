@@ -6,10 +6,11 @@ import About from './pages/About';
 import Apartment from './pages/Apartment';
 import Error from './components/Error';
 import Footer from './components/Footer';
+import './App.scss';
 
 const App = () => {
   return (
-    <div id="App">
+    <div id="app">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
