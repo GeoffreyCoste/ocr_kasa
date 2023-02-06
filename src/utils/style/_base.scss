@@ -1,0 +1,26 @@
+@use './media-queries';
+
+body {
+  font-size: 1rem;
+  font-family: var(--font-family);
+  font-weight: 500;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 2.667rem;
+  color: var(--secondary);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}

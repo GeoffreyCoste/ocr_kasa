@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Logo from '../../assets/logo.png';
+import Navbar from '../Navbar';
+import './style.scss';
 
 const Header = () => {
   return (
     <header>
-      <nav>
-        <ul>
-          <Link to="/">Accueil</Link>
-          <Link to="/about">A propos</Link>
-        </ul>
-      </nav>
+      <div className="navbar-logo">
+        <img src={Logo} alt="Kasa logo" />
+      </div>
+      <Navbar />
     </header>
   );
 };

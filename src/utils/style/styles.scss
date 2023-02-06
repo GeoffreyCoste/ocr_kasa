@@ -1,0 +1,9 @@
+@use 'base';
+@use 'media-queries';
+@use 'reset';
+@use 'variables';
+
+#app {
+  max-width: 1920px;
+  margin: 0 auto;
+}

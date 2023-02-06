@@ -1,0 +1,50 @@
+main {
+  padding: 0 5.556rem;
+  .banner {
+    width: 100%;
+    height: 223px;
+    position: relative;
+    margin-bottom: 2.389rem;
+    background-image: url('../../assets/img_banner_home.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 25px;
+      z-index: 2;
+    }
+    h1 {
+      text-align: center;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+  }
+  #accommodations {
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.389rem;
+    background-color: var(--light-grey);
+    border-radius: 25px;
+    .accommodations-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin: 1.75rem;
+    }
+  }
+}
