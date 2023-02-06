@@ -1,0 +1,41 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.222rem 5.556rem;
+  .navbar-logo,
+  .navbar-nav {
+    flex-basis: 50%;
+  }
+  .navbar-nav {
+    .nav-list {
+      display: flex;
+      justify-content: flex-end;
+      .nav-item {
+        .nav-link {
+          position: relative;
+          margin-left: 3.167rem;
+          &.active::after {
+            width: 100%;
+          }
+        }
+        .nav-link::after {
+          content: '';
+          width: 0;
+          height: 2px;
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          background-color: var(--primary);
+          transition: width ease-in-out 0.3s;
+        }
+        &:hover {
+          .nav-link::after {
+            width: 100%;
+            transition: width ease-in-out 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
