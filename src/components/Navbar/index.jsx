@@ -14,7 +14,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState(0);
+  const [activeLink, setActiveLink] = useState('');
 
   const handleClick = (index) => {
     setActiveLink(index);
