@@ -1,0 +1,34 @@
+#accommodation {
+  padding: 0 5.556rem;
+  .accommodation__sheet {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .sheet__header {
+      width: 100%;
+      display: flex;
+      margin-bottom: 1.333rem;
+      &__left {
+        flex-basis: 50%;
+      }
+      &__right {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+    .sheet__content {
+      display: flex;
+      & .accordion {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        & .panel {
+          width: 47%;
+        }
+      }
+    }
+  }
+}

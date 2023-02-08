@@ -4,10 +4,11 @@ import qualities from '../../utils/datas/about.json';
 import './style.scss';
 
 const About = () => {
+  const data = qualities.map((q) => Object.entries(q)).flat();
   return (
     <main id="about">
       <div className="banner"></div>
-      <Accordion data={qualities} />
+      <Accordion data={data} />
     </main>
   );
 };

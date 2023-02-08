@@ -18,7 +18,6 @@ const Navbar = () => {
 
   const handleClick = (index) => {
     setActiveLink(index);
-    console.log(activeLink);
   };
 
   return (

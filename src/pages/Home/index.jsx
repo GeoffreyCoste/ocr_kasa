@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../../components/Card';
-import accommodations from '../../utils/datas/accomodations.json';
+import accommodations from '../../utils/datas/accommodations.json';
 import './style.scss';
 
 const Home = () => {

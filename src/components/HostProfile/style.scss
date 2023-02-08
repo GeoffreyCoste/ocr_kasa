@@ -1,0 +1,17 @@
+.host-profile {
+  display: flex;
+  justify-content: flex-end;
+  &__name {
+    width: 30%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+  }
+  &__img {
+    width: 64px;
+    height: 64px;
+    margin-left: 1rem;
+    border-radius: 50%;
+  }
+}
