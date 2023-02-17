@@ -1,10 +1,11 @@
-#accommodation {
+.main.main_accommodation {
   padding: 0 5.556rem;
-  .accommodation__sheet {
+  .accommodation-details {
     width: 100%;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
-    .sheet__header {
+    &__header {
       width: 100%;
       display: flex;
       margin-bottom: 1.333rem;
@@ -18,7 +19,7 @@
         align-items: flex-end;
       }
     }
-    .sheet__content {
+    .accommodation-details__content {
       display: flex;
       & .accordion {
         display: flex;

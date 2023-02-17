@@ -1,5 +1,5 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import Accordion from '../../components/Accordion';
 import Carousel from '../../components/Carousel';
 import HostProfile from '../../components/HostProfile';
@@ -9,31 +9,52 @@ import accommodations from '../../utils/datas/accommodations.json';
 import './style.scss';
 
 const Apartment = () => {
-  let { id } = useParams();
-  let apartment = accommodations.filter((a) => a.id === id);
-  const { title, location, host, rating, tags, pictures } = apartment[0];
+  const [current, setCurrent] = useState();
+  const [accordionProps, setAccordionProps] = useState([]);
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const { title, location, host, rating, tags, pictures } = current || {};
 
-  const data = Object.entries(apartment[0]).filter(
-    (arr) => arr[0] === 'description' || arr[0] === 'equipments'
-  );
+  useEffect(() => {
+    id &&
+      accommodations.some((el) => el.id === id) &&
+      setCurrent(...accommodations.filter((a) => a.id === id));
+  }, [id]);
+
+  useEffect(() => {
+    current &&
+      setAccordionProps(
+        Object.entries(current).filter(
+          (arr) => arr[0] === 'description' || arr[0] === 'equipments'
+        )
+      );
+  }, [current]);
+
+  useEffect(() => {
+    !id ||
+      (!accommodations.some((el) => el.id === id) &&
+        navigate('/error', { replace: true }));
+  });
 
   return (
-    <main id="accommodation">
-      <Carousel />
-      <section className="accommodation__sheet">
-        <div className="sheet__header">
-          <div className="sheet__header__left">
+    <main className="main main_accommodation">
+      {pictures && <Carousel data={pictures} />}
+      <section className="accommodation-details">
+        <div className="accommodation-details__header">
+          <div className="accommodation-details__header__left">
             <h2>{title}</h2>
             <span>{location}</span>
-            <Tags tags={tags} />
+            {tags && <Tags tags={tags} />}
           </div>
-          <div className="sheet__header__right">
-            <HostProfile name={host.name} img={host.picture} />
+          <div className="accommodation-details__header__right">
+            {host && <HostProfile name={host.name} img={host.picture} />}
             <Rating rating={rating} />
           </div>
         </div>
-        <div className="sheet__content">
-          <Accordion data={data} />
+        <div className="accommodation-details__content">
+          {accordionProps && (
+            <Accordion data={accordionProps} isInline={true} />
+          )}
         </div>
       </section>
     </main>

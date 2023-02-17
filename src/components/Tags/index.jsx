@@ -4,16 +4,18 @@ import './style.scss';
 
 const Tags = ({ tags }) => {
   return (
-    <ul className="tags-list">
-      {tags.map((tag, index) => (
-        <li
-          className="tag-item"
-          key={`${index}-517c4f53-ad3e-42d3-a35c-af31b43730e0`}
-        >
-          <Tag tag={tag} />
-        </li>
-      ))}
-    </ul>
+    <div className="tags">
+      <ul className="tags__list">
+        {tags.map((tag, index) => (
+          <li
+            className="tags__item"
+            key={`${index}-517c4f53-ad3e-42d3-a35c-af31b43730e0`}
+          >
+            <Tag tag={tag} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

@@ -1,0 +1,31 @@
+.nav {
+  &__list {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__item {
+    .nav__link {
+      position: relative;
+      margin-left: 3.167rem;
+      &_active::after {
+        width: 100%;
+      }
+    }
+    .nav__link::after {
+      content: '';
+      width: 0;
+      height: 2px;
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--primary);
+      transition: width ease-in-out 0.3s;
+    }
+    &:hover {
+      .nav__link::after {
+        width: 100%;
+        transition: width ease-in-out 0.3s;
+      }
+    }
+  }
+}

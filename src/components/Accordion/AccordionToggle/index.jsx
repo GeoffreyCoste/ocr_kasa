@@ -1,5 +1,5 @@
 import React from 'react';
-import Arrow from '../../Arrow';
+import AnimatedArrow from '../../AnimatedArrow';
 
 const AccordionToggle = ({ toggle, index, active, handleClick }) => {
   return (
@@ -13,7 +13,7 @@ const AccordionToggle = ({ toggle, index, active, handleClick }) => {
       onClick={() => handleClick()}
     >
       <h2>{toggle}</h2>
-      <Arrow isActive={active} />
+      <AnimatedArrow isActive={active} />
     </button>
   );
 };

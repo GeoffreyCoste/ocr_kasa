@@ -16,7 +16,7 @@
     0% 38%,
     37% 38%
   );
-  &.selected {
+  &_selected {
     background-color: var(--primary);
   }
 }

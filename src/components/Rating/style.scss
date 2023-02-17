@@ -1,4 +1,6 @@
-.rating-list {
-  display: flex;
-  margin-top: 1rem;
+.rating {
+  &__list {
+    display: flex;
+    margin-top: 1rem;
+  }
 }

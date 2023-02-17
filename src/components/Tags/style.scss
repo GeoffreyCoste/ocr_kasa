@@ -1,18 +1,20 @@
-.tags-list {
-  display: flex;
-  margin-top: 1rem;
-  .tag-item {
+.tags {
+  &__list {
+    display: flex;
+    margin-top: 1rem;
+  }
+  &__item {
     margin-right: 10px;
-    .tag {
-      width: auto;
-      height: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0 0.5rem;
-      color: var(--secondary);
-      background-color: var(--primary);
-      border-radius: 20px;
-    }
+  }
+  &__text {
+    width: auto;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
+    color: var(--secondary);
+    background-color: var(--primary);
+    border-radius: 20px;
   }
 }
