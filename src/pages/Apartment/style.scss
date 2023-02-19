@@ -1,0 +1,35 @@
+.main.main_accommodation {
+  padding: 0 5.556rem;
+  .accommodation-details {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    &__header {
+      width: 100%;
+      display: flex;
+      margin-bottom: 1.333rem;
+      &__left {
+        flex-basis: 50%;
+      }
+      &__right {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+    .accommodation-details__content {
+      display: flex;
+      & .accordion {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        & .panel {
+          width: 47%;
+        }
+      }
+    }
+  }
+}

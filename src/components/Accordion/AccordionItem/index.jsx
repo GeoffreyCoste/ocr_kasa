@@ -7,7 +7,6 @@ const AccordionItem = ({ toggle, collapse, index }) => {
 
   const handleClick = () => {
     setIsActive(!isActive);
-    console.log('handleClick');
   };
 
   return (

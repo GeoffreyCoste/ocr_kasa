@@ -10,7 +10,7 @@ const AccordionCollapse = ({ collapse, index, active }) => {
       aria-hidden={!active}
       tabIndex="0"
     >
-      <p className="panel__content">{collapse}</p>
+      <div className="panel__content">{collapse}</div>
     </div>
   );
 };

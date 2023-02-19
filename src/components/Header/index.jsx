@@ -5,9 +5,9 @@ import './style.scss';
 
 const Header = () => {
   return (
-    <header>
-      <div className="navbar-logo">
-        <img src={Logo} alt="Kasa logo" />
+    <header className="header">
+      <div className="logo">
+        <img src={Logo} alt="Kasa logo" className="logo__img" />
       </div>
       <Navbar />
     </header>

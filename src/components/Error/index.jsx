@@ -4,9 +4,14 @@ import './style.scss';
 
 const Error = () => {
   return (
-    <main id="error">
-      <span>404</span>
-      <p>Oups ! La page que vous demandez n'existe pas.</p>
+    <main className="main main_error">
+      <div className="error">
+        <span className="error__code">404</span>
+        <p className="error__message">
+          Oups ! La page que vous demandez n'existe pas.
+        </p>
+      </div>
+
       <Link to="/" className="nav-link">
         Retourner sur la page d'accueil
       </Link>
