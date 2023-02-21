@@ -1,9 +1,21 @@
+@import '../../utils/style/media-queries';
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2.222rem 5.556rem;
-  .logo,
+  @include mobile {
+    padding: 1rem;
+  }
+  .logo {
+    flex-basis: 50%;
+    &__img {
+      @include mobile {
+        width: 120px;
+      }
+    }
+  }
   .nav {
     flex-basis: 50%;
   }

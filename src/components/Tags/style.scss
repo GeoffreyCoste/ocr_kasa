@@ -1,3 +1,5 @@
+@import '../../utils/style/media-queries';
+
 .tags {
   &__list {
     display: flex;
@@ -16,5 +18,8 @@
     color: var(--secondary);
     background-color: var(--primary);
     border-radius: 20px;
+    @include mobile {
+      font-size: 0.556rem;
+    }
   }
 }

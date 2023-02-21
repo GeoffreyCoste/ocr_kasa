@@ -1,16 +1,24 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import './style.scss';
 
 const CarouselCustom = ({
   pictures,
   speed = 3000,
   transitionSpeed = 500,
-  slideWidth = 1130,
-  slideHeight = 415,
+  /* slideWidth = {
+    desktop: 1130,
+    mobile: 300,
+  }, */
+  slideHeight = {
+    desktop: 415,
+    mobile: 255,
+  },
   auto,
   manual,
   index,
 }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [slideWidth, setSlideWidth] = useState();
   const [slides, setSlides] = useState(pictures);
   const [visibleSlide, setVisibleSlide] = useState(1);
   const [transition, setTransition] = useState(true);
@@ -18,6 +26,25 @@ const CarouselCustom = ({
   const [prevAndNextDisabled, setPrevAndNextDisabled] = useState(false);
   const [autoPlay, setAutoPlay] = useState(false);
   const intervalId = useRef(null);
+  const carousel = useRef(null);
+  const isMobile = windowWidth < 768;
+
+  useLayoutEffect(() => {
+    const evalSlideWidth = () => {
+      setSlideWidth(carousel.current.innerWidth);
+    };
+
+    window.addEventListener('resize', evalSlideWidth);
+
+    evalSlideWidth();
+  }, [carousel.current]);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    };
+  }, []);
 
   useEffect(() => {
     const slidesClones = [...pictures];
@@ -81,6 +108,10 @@ const CarouselCustom = ({
     }, speed);
   };
 
+  const handleWindowSizeChange = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
   const pause = () => {
     clearInterval(intervalId.current);
   };
@@ -110,13 +141,11 @@ const CarouselCustom = ({
   };
 
   const touchStart = (e) => {
-    console.log('touch start');
     const touchDown = e.touches[0].clientX;
     setTouchPosition(touchDown);
   };
 
   const touchMove = (e) => {
-    console.log('touch move');
     const touchDown = touchPosition;
 
     if (touchDown === null) return;
@@ -140,7 +169,13 @@ const CarouselCustom = ({
   };
 
   const slideDimensionsStyle = () => {
-    return { width: slideWidth + 'px', height: slideHeight + 'px' };
+    return {
+      width: slideWidth + 'px',
+      /* width: isMobile ? slideWidth.mobile : slideWidth.desktop, */
+
+      /* width: slideWidth + 'px', */
+      height: isMobile ? slideHeight.mobile : slideHeight.desktop + 'px',
+    };
   };
 
   const dotIsActive = (index) => {
@@ -152,7 +187,12 @@ const CarouselCustom = ({
   };
 
   return (
-    <div className="carousel" onTouchStart={touchStart} onTouchMove={touchMove}>
+    <div
+      className="carousel"
+      onTouchStart={touchStart}
+      onTouchMove={touchMove}
+      ref={carousel}
+    >
       <div
         className="carousel__inner"
         style={slideDimensionsStyle()}
@@ -163,7 +203,7 @@ const CarouselCustom = ({
           autoPlay && restart();
         }}
       >
-        {manual && slides.length > 1 && (
+        {manual && pictures.length > 1 && (
           <>
             <button
               type="button"
@@ -206,7 +246,7 @@ const CarouselCustom = ({
           })}
         </div>
         <div className="carousel__inner__menu menu">
-          {auto && (
+          {auto && pictures.length > 1 && (
             <div className="menu__player">
               <button
                 type="button"
@@ -217,20 +257,22 @@ const CarouselCustom = ({
               </button>
             </div>
           )}
-          <div className="menu__indicators">
-            {slides.map((slide, index) => {
-              if (index === 0 || index === slides.length - 1) return null;
-              return (
-                <div
-                  key={`${index}-3dd0598f-2dec-4c2e-a4a8-e246011ab9d1`}
-                  className={`menu__indicators__dots ${
-                    dotIsActive(index) ? 'dots_active' : ''
-                  }`}
-                  onClick={() => setVisibleSlide(index)}
-                ></div>
-              );
-            })}
-          </div>
+          {pictures.length > 1 && (
+            <div className="menu__indicators">
+              {slides.map((slide, index) => {
+                if (index === 0 || index === slides.length - 1) return null;
+                return (
+                  <div
+                    key={`${index}-3dd0598f-2dec-4c2e-a4a8-e246011ab9d1`}
+                    className={`menu__indicators__dots ${
+                      dotIsActive(index) ? 'dots_active' : ''
+                    }`}
+                    onClick={() => setVisibleSlide(index)}
+                  ></div>
+                );
+              })}
+            </div>
+          )}
           {index && (
             <div className="menu__index">
               <span>

@@ -1,3 +1,5 @@
+@import '../../utils/style/media-queries';
+
 .host-profile {
   display: flex;
   justify-content: flex-end;
@@ -5,8 +7,12 @@
     width: 30%;
     height: 64px;
     display: flex;
-    align-items: center;
-    word-wrap: break-word;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    @include mobile {
+      font-size: 0.667rem;
+    }
   }
   &__img {
     width: 64px;

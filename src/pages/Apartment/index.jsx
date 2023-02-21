@@ -42,8 +42,10 @@ const Apartment = () => {
       <section className="accommodation-details">
         <div className="accommodation-details__header">
           <div className="accommodation-details__header__left">
-            <h2>{title}</h2>
-            <span>{location}</span>
+            <h2 className="accommodation-details__header__title">{title}</h2>
+            <span className="accommodation-details__header__location">
+              {location}
+            </span>
             {tags && <Tags tags={tags} />}
           </div>
           <div className="accommodation-details__header__right">
