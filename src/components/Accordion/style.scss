@@ -1,3 +1,5 @@
+@import '../../utils/style/media-queries';
+
 .accordion {
   display: flex;
   margin: 0 auto;
@@ -10,6 +12,9 @@
     flex-direction: column;
     margin-bottom: 1.833rem;
     border-radius: var(--border-radius);
+    @include mobile {
+      margin-bottom: 1rem;
+    }
     &__toggle {
       height: 47px;
       display: flex;
@@ -21,9 +26,16 @@
       border: none;
       border-radius: var(--border-radius);
       cursor: pointer;
+      @include mobile {
+        height: 30px;
+      }
       h2 {
         font-size: 1.333rem;
         margin-left: 1rem;
+        @include mobile {
+          font-size: 0.778rem;
+          font-weight: 500;
+        }
       }
     }
     &__collapse {
@@ -48,6 +60,9 @@
           padding: 1rem 1rem 0.75rem 1rem;
           transition: opacity 0.3s linear 0.18s;
         }
+      }
+      @include mobile {
+        font-size: 0.667rem;
       }
     }
     &:has(.panel__collapse[aria-hidden='false']) {

@@ -1,6 +1,11 @@
+@import '../../utils/style/media-queries';
+
 .rating {
   &__list {
     display: flex;
     margin-top: 1rem;
+    @include mobile {
+      margin-top: 0;
+    }
   }
 }

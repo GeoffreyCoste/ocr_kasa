@@ -1,5 +1,10 @@
+@import '../../utils/style/media-queries';
+
 .main.main_home {
   padding: 0 5.556rem;
+  @include mobile {
+    padding: 0 1rem;
+  }
   .main__banner {
     width: 100%;
     height: 223px;
@@ -10,6 +15,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 25px;
+    @include mobile {
+      height: 111px;
+      margin-bottom: 1.222rem;
+      border-radius: var(--border-radius);
+    }
     &::after {
       content: '';
       width: 100%;
@@ -20,6 +30,9 @@
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 25px;
       z-index: 2;
+      @include mobile {
+        border-radius: var(--border-radius);
+      }
     }
     &__title {
       text-align: center;
@@ -28,6 +41,13 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 3;
+      @include mobile {
+        width: 70%;
+        font-size: 1.333rem;
+        font-weight: 500;
+        text-align: start;
+        left: 45%;
+      }
     }
   }
   .accommodations {
@@ -39,16 +59,31 @@
     margin-bottom: 2.389rem;
     background-color: var(--light-grey);
     border-radius: 25px;
+    @include mobile {
+      background-color: var(--secondary);
+    }
     &__list {
       display: flex;
       flex-wrap: wrap;
       align-items: flex-start;
+      justify-content: center;
       gap: 2.25rem;
       margin: 2.25rem;
+      @include mobile {
+        gap: 1.222rem;
+        margin: 0;
+      }
     }
     &__item {
-      flex-basis: 289px;
-      height: 289px;
+      flex-basis: 31%;
+      aspect-ratio: 1 / 1;
+      @include mobile {
+        flex-basis: 100%;
+        height: 255px;
+      }
+      &:last-child {
+        margin-right: auto;
+      }
     }
   }
 }

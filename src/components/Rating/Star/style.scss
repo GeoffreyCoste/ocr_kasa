@@ -1,3 +1,5 @@
+@import '../../../utils/style/media-queries';
+
 .star {
   width: 25px;
   height: 25px;
@@ -16,6 +18,10 @@
     0% 38%,
     37% 38%
   );
+  @include mobile {
+    width: 15px;
+    height: 15px;
+  }
   &_selected {
     background-color: var(--primary);
   }
