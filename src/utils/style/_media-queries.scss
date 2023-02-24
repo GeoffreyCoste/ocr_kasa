@@ -4,3 +4,10 @@
     @content;
   }
 }
+
+/* Large desktop */
+@mixin desktop-xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

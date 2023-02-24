@@ -31,7 +31,7 @@ const CarouselCustom = ({
 
   useLayoutEffect(() => {
     const evalSlideWidth = () => {
-      setSlideWidth(carousel.current.innerWidth);
+      setSlideWidth(carousel.current.offsetWidth);
     };
 
     window.addEventListener('resize', evalSlideWidth);
@@ -109,10 +109,11 @@ const CarouselCustom = ({
   };
 
   const handleWindowSizeChange = () => {
-    setWindowWidth(window.innerWidth);
+    setWindowWidth(window.offsetWidth);
   };
 
   const pause = () => {
+    console.log('pause ||');
     clearInterval(intervalId.current);
   };
 
@@ -239,7 +240,7 @@ const CarouselCustom = ({
                 style={slideDimensionsStyle()}
               >
                 <div className="slides__content">
-                  <img src={slide} alt="" className="slide__img" />
+                  <img src={slide} alt="" className="slides__img" />
                 </div>
               </div>
             );
