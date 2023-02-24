@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Accordion from '../../components/Accordion';
-import CarouselCustom from '../../components/CarouselCustom';
+import Carousel from '../../components/Carousel';
 import HostProfile from '../../components/HostProfile';
 import Rating from '../../components/Rating';
 import Tags from '../../components/Tags';
@@ -38,7 +38,7 @@ const Apartment = () => {
 
   return (
     <main className="main main_accommodation">
-      {pictures && <CarouselCustom pictures={pictures} auto manual index />}
+      {pictures && <Carousel pictures={pictures} />}
       <section className="accommodation-details">
         <div className="accommodation-details__header">
           <div className="accommodation-details__header__left">

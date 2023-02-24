@@ -14,22 +14,21 @@
         font-size: 0.667rem;
         text-transform: uppercase;
       }
-      &_active::after {
-        width: 100%;
+      &::after {
+        content: '';
+        width: 0;
+        height: 2px;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--primary);
+        transition: width ease-in-out 0.3s;
       }
-    }
-    .nav__link::after {
-      content: '';
-      width: 0;
-      height: 2px;
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      background-color: var(--primary);
-      transition: width ease-in-out 0.3s;
-    }
-    &:hover {
-      .nav__link::after {
+      &:hover::after {
+        width: 100%;
+        transition: width ease-in-out 0.3s;
+      }
+      &_active::after {
         width: 100%;
         transition: width ease-in-out 0.3s;
       }
