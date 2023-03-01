@@ -45,9 +45,10 @@ const Carousel = ({ pictures }) => {
               key={`${index}-b9fb52e4-51b2-45f8-bf16-1addaa3db52e`}
               className="carousel__inner__content slides"
             >
-              <div className="slides__item">
+              <img src={slide} alt="" className="slides__item__img" />
+              {/* <div className="slides__item">
                 <img src={slide} alt="" className="slides__item__img" />
-              </div>
+              </div> */}
             </div>
           );
         })}
