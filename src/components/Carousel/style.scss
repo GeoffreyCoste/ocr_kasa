@@ -2,19 +2,17 @@
 
 .carousel {
   width: 100%;
-  height: 415px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
   margin-bottom: 2rem;
   border-radius: 25px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   white-space: nowrap;
   @include mobile {
+    margin-bottom: 0.833rem;
     border-radius: var(--border-radius);
-    height: 255px;
   }
   &__controls {
     width: 15%;
@@ -54,27 +52,23 @@
   &__inner {
     width: 100%;
     height: 100%;
-    /* display: flex; */
-
     position: relative;
-    &__content {
-      width: 100%;
-      height: 100%;
-      /* display: flex; */
-      display: inline-block;
-    }
     .slides {
       width: 100%;
-      height: 100%;
-      &__item {
+      height: 415px;
+      display: inline-block;
+      @include mobile {
+        border-radius: var(--border-radius);
+        height: 255px;
+      }
+      &__img {
         width: 100%;
         height: 100%;
-        &__img {
-          width: 100%;
-          @include mobile {
-            max-height: 100%;
-          }
-          object-fit: cover;
+        object-fit: cover;
+        @include mobile {
+          max-height: 100%;
+          border-radius: var(--border-radius);
+          object-fit: initial;
         }
       }
     }

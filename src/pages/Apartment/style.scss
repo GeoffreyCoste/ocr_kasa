@@ -1,6 +1,7 @@
 @import '../../utils/style/media-queries';
 
 .main.main_accommodation {
+  max-width: 1440px;
   padding: 0 5.556rem;
   @include mobile {
     padding: 0 1rem;
@@ -19,17 +20,22 @@
       }
       &__left {
         flex-basis: 50%;
+        @include mobile {
+          margin-bottom: 0.889rem;
+        }
       }
       &__right {
         flex-basis: 50%;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         align-items: flex-end;
         @include mobile {
           flex-direction: row;
           align-items: center;
           justify-content: space-between;
           .host-profile {
+            align-items: center;
             order: 2;
           }
           .rating {
@@ -39,8 +45,11 @@
         }
       }
       &__title {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
         @include mobile {
           font-size: 1rem;
+          margin-bottom: 0.444rem;
         }
       }
       &__location {

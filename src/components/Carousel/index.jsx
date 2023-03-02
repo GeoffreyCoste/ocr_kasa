@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style.scss';
 
 const Carousel = ({ pictures }) => {
-  const [slides, setSlides] = useState(pictures);
+  const [slides, setSlides] = useState(pictures); // array of pics paths
   const [visibleSlide, setVisibleSlide] = useState(0);
 
   const prev = () => {
@@ -45,10 +45,7 @@ const Carousel = ({ pictures }) => {
               key={`${index}-b9fb52e4-51b2-45f8-bf16-1addaa3db52e`}
               className="carousel__inner__content slides"
             >
-              <img src={slide} alt="" className="slides__item__img" />
-              {/* <div className="slides__item">
-                <img src={slide} alt="" className="slides__item__img" />
-              </div> */}
+              <img src={slide} alt={`slide-${index}`} className="slides__img" />
             </div>
           );
         })}

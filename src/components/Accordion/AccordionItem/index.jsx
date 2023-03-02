@@ -3,7 +3,7 @@ import AccordionCollapse from '../AccordionCollapse';
 import AccordionToggle from '../AccordionToggle';
 
 const AccordionItem = ({ toggle, collapse, index }) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false); // initial state: accordion toggle panel is hidden
 
   const handleClick = () => {
     setIsActive(!isActive);
