@@ -5,13 +5,14 @@
   justify-content: flex-end;
   &__name {
     width: 30%;
-    height: 64px;
+    /* height: 64px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     @include mobile {
       font-size: 0.667rem;
+      justify-content: flex-start;
     }
   }
   &__img {
@@ -19,5 +20,9 @@
     height: 64px;
     margin-left: 1rem;
     border-radius: 50%;
+    @include mobile {
+      width: 32px;
+      height: 32px;
+    }
   }
 }

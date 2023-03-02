@@ -2,8 +2,13 @@ import React from 'react';
 import AccordionItem from './AccordionItem';
 import './style.scss';
 
+// Capitalize first string letter
 const capitalize = (str) => str[0].toUpperCase() + str.slice(1);
 
+// create random key by:
+// generating random number
+// + converting random number to a 16 digit base-36 string
+// + returning characters from 3rd to 9th position
 const generateKey = Math.random().toString(36).substring(3, 9);
 
 const displayList = (arr) => {
@@ -29,7 +34,7 @@ const Accordion = ({ data, isInline }) => {
     >
       {data.map((item, index) => {
         let toggle = capitalize(item[0]);
-        let collapse = !Array.isArray(item[1]) ? item[1] : displayList(item[1]);
+        let collapse = !Array.isArray(item[1]) ? item[1] : displayList(item[1]); // Manage accordion collapse content based on whether it is text or a list
 
         return (
           <AccordionItem
