@@ -2,10 +2,10 @@
 
 .main.main_about {
   max-width: 1440px;
-  min-height: 100vh;
+  min-height: 950px;
   padding: 0 5.556rem;
   @include mobile {
-    min-height: 120vh;
+    min-height: 600px;
     padding: 0 1rem;
   }
   .main__banner {
