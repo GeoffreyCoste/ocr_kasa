@@ -2,8 +2,10 @@
 
 .main.main_accommodation {
   max-width: 1440px;
+  min-height: 1050px;
   padding: 0 5.556rem;
   @include mobile {
+    min-height: 800px;
     padding: 0 1rem;
   }
   .accommodation-details {

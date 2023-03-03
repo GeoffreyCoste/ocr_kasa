@@ -3,13 +3,15 @@
 .tags {
   &__list {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 1rem;
+  }
+  &__item {
+    margin-top: 1rem;
+    margin-right: 10px;
     @include mobile {
       margin-top: 0.556rem;
     }
-  }
-  &__item {
-    margin-right: 10px;
   }
   &__text {
     width: auto;
