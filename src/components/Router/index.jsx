@@ -8,11 +8,11 @@ import Error from '../Error';
 const Router = () => {
   return (
     <Routes>
-      <Route path="/ocr_kasa/" element={<Home />} />
-      <Route path="/ocr_kasa/about" element={<About />} />
-      <Route path="/ocr_kasa/apartment/:id" element={<Apartment />} />
-      <Route path="/ocr_kasa/apartment/*" element={<Error />} />
-      <Route path="/ocr_kasa/error" element={<Error />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/apartment/:id" element={<Apartment />} />
+      <Route path="/apartment/*" element={<Error />} />
+      <Route path="/error" element={<Error />} />
       <Route path="*" element={<Error />}></Route>
     </Routes>
   );
