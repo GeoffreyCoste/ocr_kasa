@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ocr_kasa/static/css/main.a6ea299a.css",
+    "main.js": "/ocr_kasa/static/js/main.920b4ea3.js",
+    "static/media/img_banner_about.png": "/ocr_kasa/static/media/img_banner_about.8c7b5c194c855fc24beb.png",
+    "static/media/img_banner_home.png": "/ocr_kasa/static/media/img_banner_home.5e957059415158bbb8c1.png",
+    "index.html": "/ocr_kasa/index.html",
+    "main.a6ea299a.css.map": "/ocr_kasa/static/css/main.a6ea299a.css.map",
+    "main.920b4ea3.js.map": "/ocr_kasa/static/js/main.920b4ea3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6ea299a.css",
+    "static/js/main.920b4ea3.js"
+  ]
+}
