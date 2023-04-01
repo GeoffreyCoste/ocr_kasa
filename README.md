@@ -1,8 +1,18 @@
-# Getting Started with Create React App
+# Frontend - Kasa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repo includes Kasa Frontend: web app for property rental.
 
-## Available Scripts
+Basis code from [Create React App](https://github.com/facebook/create-react-app).
+
+## Configuration
+
+![_React_](https://img.shields.io/badge/react-v18.2.0-brightgreen)
+![_React_router_](https://img.shields.io/badge/React%20router-v6.8.0-red)
+![_Sass_](https://img.shields.io/badge/sass-v1.58.0-pink)
+
+## Current branch
+
+Contains code basis available on `main` branch completed with config necessary to create `build` folder used for production with GitHub Pages. Code in `build` folder available on `gh-pages` branch.
 
 In the project directory, you can run:
 
@@ -33,38 +43,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Démo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Link to GitHub Pages demo:
+[demo](https://geoffreycoste.github.io/ocr_kasa/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Other branches
 
-## Learn More
+`main` branch includes development code basis.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`gh-pages` includes code used for production as explained above.
